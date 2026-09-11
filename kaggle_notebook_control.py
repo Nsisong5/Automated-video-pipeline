@@ -63,7 +63,10 @@ def push_job_request(username: str, jobs: list[dict]) -> None:
 
 def delete_dataset(username: str, slug: str) -> bool:
     dataset_id = f"{username}/{slug}"
-    result = _run(["kaggle", "datasets", "delete", "-d", dataset_id, "--yes"])
+    # -d isn't accepted by this delete subcommand on the installed CLI
+    # version (confirmed: "unrecognized arguments: -d") — positional matches
+    # how every other kaggle command here already works.
+    result = _run(["kaggle", "datasets", "delete", dataset_id, "--yes"])
     if result.returncode == 0:
         print(f"Deleted dataset: {dataset_id}")
         return True
@@ -99,9 +102,48 @@ def start_notebook(username: str) -> None:
 
     metadata["enable_gpu"] = True
     metadata["enable_internet"] = True
+
+    # A controlled comparison test found the one real difference between a
+    # kernel that got a GPU and one that didn't: the working one had no
+    # pinned docker_image at all. A frozen image pinned by digest could be
+    # old enough that its PyTorch build genuinely isn't CUDA-compiled,
+    # independent of whether Kaggle attaches a physical GPU. Drop the pin so
+    # this uses Kaggle's current default image instead.
+    if "docker_image" in metadata:
+        print(f"Removing pinned docker_image: {metadata['docker_image']}")
+        del metadata["docker_image"]
+
     with open(metadata_path, "w") as f:
         json.dump(metadata, f, indent=2)
-    print(f"kernel-metadata.json AFTER forcing GPU: {metadata}")
+    print(f"kernel-metadata.json AFTER forcing GPU + dropping image pin: {metadata}")
+
+    # The .ipynb file carries its OWN separate embedded accelerator record
+    # (metadata.kaggle.accelerator / isGpuEnabled / isInternetEnabled) —
+    # this is what the browser's "Settings -> Accelerator" actually edits,
+    # and it can be out of sync with kernel-metadata.json above. Patch it
+    # directly rather than trusting the sidecar file alone.
+    notebook_filename = metadata.get("code_file")
+    if not notebook_filename:
+        raise RuntimeError("kernel-metadata.json has no 'code_file' entry — can't "
+                            "find the .ipynb to patch its embedded metadata.")
+    notebook_path = os.path.join(pull_dir, notebook_filename)
+
+    with open(notebook_path) as f:
+        notebook = json.load(f)
+
+    kaggle_block = notebook.get("metadata", {}).get("kaggle", {})
+    print(f"Notebook's OWN embedded accelerator metadata BEFORE patch: {kaggle_block}")
+
+    notebook.setdefault("metadata", {}).setdefault("kaggle", {})
+    notebook["metadata"]["kaggle"]["accelerator"] = "gpu"
+    notebook["metadata"]["kaggle"]["isGpuEnabled"] = True
+    notebook["metadata"]["kaggle"]["isInternetEnabled"] = True
+
+    with open(notebook_path, "w") as f:
+        json.dump(notebook, f)
+
+    print(f"Notebook's embedded accelerator metadata AFTER patch: "
+          f"{notebook['metadata']['kaggle']}")
 
     _run(["kaggle", "kernels", "push", "-p", pull_dir])
     print(f"Triggered a fresh run of {kernel_ref}")
@@ -117,18 +159,43 @@ def wait_for_completion(username: str, timeout_seconds: int = 2400,
                          poll_interval: int = 30) -> str:
     """Polls status until it reports complete or error. Model loading alone
     has taken several minutes in your runs, plus generation time per job —
-    default timeout is generous (40 min)."""
+    default timeout is generous (40 min).
+
+    Local network blips (e.g. this backend's own connection dropping) must
+    NOT be treated the same as Kaggle reporting the kernel itself failed —
+    an earlier version of this function did exactly that, because exception
+    text like 'NameResolutionError' contains the substring 'error' and got
+    caught by a naive check. That silently discarded a run that was actually
+    still succeeding on Kaggle's side. Now: network-failure text is detected
+    explicitly and treated as transient (keep waiting), and 'error' is only
+    trusted as a genuine kernel failure when it's part of Kaggle's own
+    reported status text, not a connection exception's message."""
     start = time.time()
+    network_failure_markers = (
+        "nameresolutionerror", "max retries exceeded", "connectionerror",
+        "temporary failure in name resolution", "failed to resolve",
+        "connection aborted", "remote end closed connection",
+        "connection refused", "timed out",
+    )
     while time.time() - start < timeout_seconds:
         status_text = get_status(username).lower()
         elapsed = time.time() - start
         print(f"  status check at {elapsed:.0f}s: {status_text}")
+
+        if any(marker in status_text for marker in network_failure_markers):
+            print("  ⚠️ That looks like a LOCAL network problem on this end, not "
+                  "something Kaggle reported about the kernel itself. Treating "
+                  "this as transient — not giving up on the run.")
+            time.sleep(poll_interval)
+            continue
+
         if "complete" in status_text:
             return "complete"
-        if "error" in status_text or "failed" in status_text:
+        if "kernelworkerstatus.error" in status_text or "kernelworkerstatus.failed" in status_text:
             return "error"
+
         time.sleep(poll_interval)
-    raise TimeoutError(f"Notebook did not complete within {timeout_seconds}s")
+    raise TimeoutError(f"Notebook did not reach a final status within {timeout_seconds}s")
 
 
 def fetch_outputs(username: str, dest_dir: str = "notebook_outputs") -> str:

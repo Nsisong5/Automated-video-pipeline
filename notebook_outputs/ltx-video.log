@@ -1,0 +1,404 @@
+[{"stream_name":"stderr","time":6.363232652,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.363328363,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.363338332,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.363345731,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":6.927436524,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.927469703,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.92747324,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.927476371,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":12.425704716,"data":"=== Kaggle Dual GPU Environment Setup (GPU T4 x2) ===\n"}
+,{"stream_name":"stdout","time":12.425768179,"data":"System RAM: 31.3 GB total, 29.9 GB available\n"}
+,{"stream_name":"stdout","time":12.425772392,"data":"Detected GPUs: 2\n"}
+,{"stream_name":"stderr","time":13.050712125,"data":"Cloning into 'Wan2GP'...\n"}
+,{"stream_name":"stdout","time":13.057384305,"data":"  - cuda:0 (Tesla T4): 14.5 GB free / 14.6 GB total (Capability 7.5)\n"}
+,{"stream_name":"stdout","time":13.057405943,"data":"  - cuda:1 (Tesla T4): 14.5 GB free / 14.6 GB total (Capability 7.5)\n"}
+,{"stream_name":"stdout","time":13.057412777,"data":"\n"}
+,{"stream_name":"stdout","time":13.057417853,"data":"✅ Dual GPU Configuration (GPU T4 x2) Verified!\n"}
+,{"stream_name":"stdout","time":13.057423498,"data":"Cloning latest Wan2GP repository...\n"}
+,{"stream_name":"stderr","time":13.253195219,"data":"Cloning into 'Wan2GP'...\n"}
+,{"stream_name":"stderr","time":13.253226402,"data":"\n"}
+,{"stream_name":"stderr","time":13.253230426,"data":"Cloning into 'Wan2GP'...\n"}
+,{"stream_name":"stdout","time":19.204598621,"data":"✓ Wan2GP cloned successfully!\n"}
+,{"stream_name":"stdout","time":19.20463999,"data":"Installing all core Wan2GP dependencies...\n"}
+,{"stream_name":"stderr","time":20.696114193,"data":"WARNING: Skipping sageattention as it is not installed.\n"}
+,{"stream_name":"stderr","time":20.898915235,"data":"WARNING: Skipping sageattention as it is not installed.\n"}
+,{"stream_name":"stderr","time":20.898955627,"data":"\n"}
+,{"stream_name":"stderr","time":20.898961034,"data":"WARNING: Skipping sageattention as it is not installed.\n"}
+,{"stream_name":"stdout","time":22.069252145,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.4/61.4 kB 4.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":22.16692884,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.0/62.0 kB 4.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":22.271213887,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.4/61.4 kB 4.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":22.271248243,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.0/62.0 kB 4.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":22.696806209000002,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 41.7/41.7 kB 2.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":22.89884783,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 41.7/41.7 kB 2.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":23.818124659,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.4/47.4 MB 41.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":24.020008146,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.4/47.4 MB 41.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":27.533636007,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.9/60.9 kB 4.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":27.735724113,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.9/60.9 kB 4.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":28.23939915,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 803.2/803.2 kB 49.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":28.441838615,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 803.2/803.2 kB 49.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":34.486808939,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 49.4/49.4 kB 3.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":34.689001943,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 49.4/49.4 kB 3.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":35.76350226,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.4/46.4 kB 2.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":35.96572793,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.4/46.4 kB 2.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":39.668694994,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 188.1/188.1 MB 9.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":39.876857316,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 188.1/188.1 MB 9.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":40.37792459,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.2/42.2 kB 3.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":40.579857439,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.2/42.2 kB 3.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":41.261926017,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 439.5/439.5 kB 27.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":41.463771267,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 439.5/439.5 kB 27.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":55.53705966,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.1/40.1 kB 2.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":55.739113216,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.1/40.1 kB 2.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":56.285526937,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.3/48.3 kB 3.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":56.487441571,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.3/48.3 kB 3.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":58.94798914,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 103.9/103.9 kB 79.6 kB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":59.150241162,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 103.9/103.9 kB 79.6 kB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":59.206263248,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.5/62.5 kB 4.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":59.408671638,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.5/62.5 kB 4.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":61.25642743,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 157.1/157.1 kB 10.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":61.458260993,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 157.1/157.1 kB 10.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":72.485657209,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.0/45.0 kB 3.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":72.693740257,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.0/45.0 kB 3.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":73.942248108,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 178.0/178.0 kB 13.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":74.144053246,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 178.0/178.0 kB 13.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":87.065980469,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 68.2/68.2 kB 4.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":87.13933314,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 70.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":87.260259592,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.2/11.2 MB 97.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":87.268967423,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 68.2/68.2 kB 4.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":87.268998399,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 70.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":87.269019232,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.2/11.2 MB 97.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":87.420955298,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.0/16.0 MB 84.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":87.440273244,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 163.5/163.5 kB 12.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":87.470443047,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 864.1/864.1 kB 45.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":87.499313448,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 354.0/354.0 kB 18.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":87.527607439,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 897.8/897.8 kB 47.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":87.593217141,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 79.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":87.623269169,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.0/16.0 MB 84.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":87.623314039,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 163.5/163.5 kB 12.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":87.623320522,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 864.1/864.1 kB 45.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":87.62332553,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 354.0/354.0 kB 18.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":87.623330465,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 897.8/897.8 kB 47.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":87.623335401,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 79.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.310951288,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.1/54.1 MB 31.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.347550002,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 41.2/41.2 kB 2.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.366201338,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 59.6/59.6 kB 4.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.385832848,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 52.7/52.7 kB 3.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.409353331,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 431.7/431.7 kB 27.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.430798581,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 150.9/150.9 kB 11.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.454937726,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 503.9/503.9 kB 33.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.476638775,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.2/96.2 kB 7.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.506000729,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 287.4/287.4 kB 16.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.512948644,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.1/54.1 MB 31.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.512976343,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 41.2/41.2 kB 2.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.512982585,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 59.6/59.6 kB 4.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.512986968,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 52.7/52.7 kB 3.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.512991475,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 431.7/431.7 kB 27.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.512997433,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 150.9/150.9 kB 11.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.513005193,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 503.9/503.9 kB 33.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.513021113,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.2/96.2 kB 7.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.513026073,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 287.4/287.4 kB 16.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.528480767,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 208.2/208.2 kB 15.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.551217059,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 497.9/497.9 kB 34.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.593274146,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 55.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.633726138,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 59.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.668413463,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 437.3/437.3 kB 21.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.693073791,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 322.9/322.9 kB 20.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.727756105,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 75.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.730295577,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 208.2/208.2 kB 15.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.730318382,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 497.9/497.9 kB 34.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.730324309,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 55.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.730328641,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 59.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.730333529,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 437.3/437.3 kB 21.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.730337977,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 322.9/322.9 kB 20.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.730342901,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 75.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.777156284,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.0/4.0 MB 100.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.879873446,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.8/9.8 MB 104.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.922480581,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 99.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.965558946,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 694.9/694.9 kB 45.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.979233844,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.0/4.0 MB 100.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.979263073,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.8/9.8 MB 104.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.979269335,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 99.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":88.979273677,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 694.9/694.9 kB 45.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":89.007162099,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 54.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":89.209330608,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 54.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":89.518629189,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.8/35.8 MB 38.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":89.577157754,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 195.7/195.7 kB 16.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":89.631768258,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 69.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":89.664753569,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.6/61.6 kB 4.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":89.686571329,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 226.4/226.4 kB 17.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":89.720747864,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.8/35.8 MB 38.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":89.720787999,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 195.7/195.7 kB 16.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":89.720793819,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 69.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":89.720797921,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.6/61.6 kB 4.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":89.720811094,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 226.4/226.4 kB 17.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":89.739985067,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.1/4.1 MB 98.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":89.773803699,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 59.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":89.806563518,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 67.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":89.934753038,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.6/13.6 MB 98.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":89.942177913,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.1/4.1 MB 98.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":89.942208328,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 59.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":89.942232291,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 67.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":89.942237549,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.6/13.6 MB 98.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":90.566911307,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 34.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":90.586116207,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 163.1/163.1 kB 12.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":90.62729492,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 595.4/595.4 kB 38.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":90.650512802,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.8/44.8 kB 3.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":90.711338141,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.6/3.6 MB 106.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":90.730821394,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 82.7/82.7 kB 7.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":90.769266188,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 34.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":90.769310797,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 163.1/163.1 kB 12.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":90.769320486,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 595.4/595.4 kB 38.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":90.769325243,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.8/44.8 kB 3.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":90.769330108,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.6/3.6 MB 106.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":90.76933444,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 82.7/82.7 kB 7.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":90.840625661,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.1/10.1 MB 98.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":90.90701691699999,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 917.8/917.8 kB 48.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":90.952437428,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 163.8/163.8 kB 12.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":90.976207433,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 37.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.020541685,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 849.3/849.3 kB 42.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.042585482,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.1/10.1 MB 98.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.042617601,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 917.8/917.8 kB 48.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.042625293,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 163.8/163.8 kB 12.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.042630758,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 37.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.042636507,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 849.3/849.3 kB 42.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.065718312,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.9/3.9 MB 105.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.085517498,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 81.3/81.3 kB 6.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.118005365,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.5/57.5 kB 4.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.139348043,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 53.7/53.7 kB 4.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.159959029,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 51.4/51.4 kB 3.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.20371668,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 127.8/127.8 kB 8.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.267902952,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.9/3.9 MB 105.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.26795267,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 81.3/81.3 kB 6.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.267959325,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.5/57.5 kB 4.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.267964805,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 53.7/53.7 kB 4.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.267970034,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 51.4/51.4 kB 3.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.267975119,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 127.8/127.8 kB 8.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.276036698,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 75.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.316450077,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.5/87.5 kB 5.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.33729179,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.5/48.5 kB 3.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.356925393,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 75.8/75.8 kB 5.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.463647715,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 73.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.47855427,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 75.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.478634565,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.5/87.5 kB 5.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.478640982,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.5/48.5 kB 3.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.478645101,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 75.8/75.8 kB 5.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.478649133,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 73.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.583955204,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.9/8.9 MB 79.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.605266566,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 343.2/343.2 kB 24.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.625805157,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 165.3/165.3 kB 14.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.643754928,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 129.6/129.6 kB 11.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.666014424,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 226.2/226.2 kB 15.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.68809377,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 kB 4.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.737924709,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.5/69.5 kB 5.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.757321686,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.4/99.4 kB 8.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.78648917,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.9/8.9 MB 79.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.786511895,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 343.2/343.2 kB 24.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.78652165,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 165.3/165.3 kB 14.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.786526336,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 129.6/129.6 kB 11.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.78653041,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 226.2/226.2 kB 15.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.786534135,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 kB 4.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.786538684,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.5/69.5 kB 5.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":91.786543393,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.4/99.4 kB 8.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":92.256502569,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 59.9/59.9 MB 33.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":92.290309873,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 121.6/121.6 kB 10.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":92.389473153,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.3/5.3 MB 110.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":92.412114951,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 470.6/470.6 kB 34.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":92.458608725,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 59.9/59.9 MB 33.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":92.458661163,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 121.6/121.6 kB 10.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":92.458670118,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.3/5.3 MB 110.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":92.458676799,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 470.6/470.6 kB 34.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":92.491587577,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 788.2/788.2 kB 40.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":92.51531644,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 345.1/345.1 kB 19.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":92.554214091,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 216.7/216.7 kB 15.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":92.573200396,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 114.9/114.9 kB 9.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":92.601272471,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 615.4/615.4 kB 32.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":92.69345972,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 788.2/788.2 kB 40.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":92.693493307,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 345.1/345.1 kB 19.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":92.693498448,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 216.7/216.7 kB 15.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":92.693502793,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 114.9/114.9 kB 9.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":92.693507069,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 615.4/615.4 kB 32.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stderr","time":192.213656646,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":192.213704352,"data":"bigframes 2.39.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":192.213713382,"data":"google-adk 1.29.0 requires google-cloud-bigquery-storage\u003e=2.0.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":192.213718942,"data":"grpcio-tools 1.71.2 requires protobuf\u003c6.0dev,\u003e=5.26.1, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.213724064,"data":"kaggle-environments 1.29.3 requires pydantic\u003e=2.11.4, but you have pydantic 2.10.6 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.213728703,"data":"ydata-profiling 4.18.4 requires numba\u003c0.63,\u003e=0.60, but you have numba 0.67.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.21373376,"data":"sigstore-models 0.0.6 requires pydantic\u003e=2.12, but you have pydantic 2.10.6 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.213738514,"data":"mne 1.12.1 requires decorator\u003e=5.1, but you have decorator 4.4.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.213743459,"data":"a2a-sdk 0.3.26 requires pydantic\u003e=2.11.3, but you have pydantic 2.10.6 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.21374808,"data":"google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.213753209,"data":"google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.3.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.21376802,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.213787906,"data":"google-cloud-bigtable 2.36.0 requires protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,\u003c7.0.0,\u003e=3.20.2, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.21379237,"data":"cuml-cu12 26.2.0 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.67.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.213795785,"data":"google-ai-generativelanguage 0.6.15 requires protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,\u003c6.0.0dev,\u003e=3.20.2, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.213807345,"data":"ydf 0.15.0 requires protobuf\u003c7.0.0,\u003e=5.29.1, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.213810091,"data":"google-cloud-discoveryengine 0.13.12 requires protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,\u003c7.0.0,\u003e=3.20.2, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.213814073,"data":"google-cloud-aiplatform 1.148.1 requires protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,\u003c7.0.0,\u003e=3.20.2, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.213816647,"data":"cudf-cu12 26.2.1 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.67.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.213818963,"data":"opentelemetry-proto 1.38.0 requires protobuf\u003c7.0,\u003e=5.0, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.21382153,"data":"grpcio-status 1.71.2 requires protobuf\u003c6.0dev,\u003e=5.26.1, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.213823891,"data":"google-adk 1.29.0 requires mcp\u003c2.0.0,\u003e=1.23.0, but you have mcp 1.10.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.213826259,"data":"google-adk 1.29.0 requires pydantic\u003c3.0.0,\u003e=2.12.0, but you have pydantic 2.10.6 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428123859,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":192.428166319,"data":"bigframes 2.39.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":192.428172574,"data":"google-adk 1.29.0 requires google-cloud-bigquery-storage\u003e=2.0.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":192.428177613,"data":"grpcio-tools 1.71.2 requires protobuf\u003c6.0dev,\u003e=5.26.1, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.42818231,"data":"kaggle-environments 1.29.3 requires pydantic\u003e=2.11.4, but you have pydantic 2.10.6 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428185658,"data":"ydata-profiling 4.18.4 requires numba\u003c0.63,\u003e=0.60, but you have numba 0.67.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428189845,"data":"sigstore-models 0.0.6 requires pydantic\u003e=2.12, but you have pydantic 2.10.6 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428194174,"data":"mne 1.12.1 requires decorator\u003e=5.1, but you have decorator 4.4.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428197439,"data":"a2a-sdk 0.3.26 requires pydantic\u003e=2.11.3, but you have pydantic 2.10.6 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.42820141,"data":"google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428214973,"data":"google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.3.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428219283,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428222679,"data":"google-cloud-bigtable 2.36.0 requires protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,\u003c7.0.0,\u003e=3.20.2, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428226588,"data":"cuml-cu12 26.2.0 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.67.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.42823017,"data":"google-ai-generativelanguage 0.6.15 requires protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,\u003c6.0.0dev,\u003e=3.20.2, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428235069,"data":"ydf 0.15.0 requires protobuf\u003c7.0.0,\u003e=5.29.1, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428238637,"data":"google-cloud-discoveryengine 0.13.12 requires protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,\u003c7.0.0,\u003e=3.20.2, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428243937,"data":"google-cloud-aiplatform 1.148.1 requires protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,\u003c7.0.0,\u003e=3.20.2, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428247733,"data":"cudf-cu12 26.2.1 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.67.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428250888,"data":"opentelemetry-proto 1.38.0 requires protobuf\u003c7.0,\u003e=5.0, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428254327,"data":"grpcio-status 1.71.2 requires protobuf\u003c6.0dev,\u003e=5.26.1, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428257693,"data":"google-adk 1.29.0 requires mcp\u003c2.0.0,\u003e=1.23.0, but you have mcp 1.10.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428261704,"data":"google-adk 1.29.0 requires pydantic\u003c3.0.0,\u003e=2.12.0, but you have pydantic 2.10.6 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428265321,"data":"\n"}
+,{"stream_name":"stderr","time":192.428268357,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":192.428272235,"data":"bigframes 2.39.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":192.428275976,"data":"google-adk 1.29.0 requires google-cloud-bigquery-storage\u003e=2.0.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":192.428280229,"data":"grpcio-tools 1.71.2 requires protobuf\u003c6.0dev,\u003e=5.26.1, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428284217,"data":"kaggle-environments 1.29.3 requires pydantic\u003e=2.11.4, but you have pydantic 2.10.6 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428300714,"data":"ydata-profiling 4.18.4 requires numba\u003c0.63,\u003e=0.60, but you have numba 0.67.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428307506,"data":"sigstore-models 0.0.6 requires pydantic\u003e=2.12, but you have pydantic 2.10.6 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428311353,"data":"mne 1.12.1 requires decorator\u003e=5.1, but you have decorator 4.4.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428319895,"data":"a2a-sdk 0.3.26 requires pydantic\u003e=2.11.3, but you have pydantic 2.10.6 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428323755,"data":"google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428327446,"data":"google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.3.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428331307,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428335025,"data":"google-cloud-bigtable 2.36.0 requires protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,\u003c7.0.0,\u003e=3.20.2, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428339549,"data":"cuml-cu12 26.2.0 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.67.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428343602,"data":"google-ai-generativelanguage 0.6.15 requires protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,\u003c6.0.0dev,\u003e=3.20.2, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428348041,"data":"ydf 0.15.0 requires protobuf\u003c7.0.0,\u003e=5.29.1, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428351832,"data":"google-cloud-discoveryengine 0.13.12 requires protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,\u003c7.0.0,\u003e=3.20.2, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428355751,"data":"google-cloud-aiplatform 1.148.1 requires protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,\u003c7.0.0,\u003e=3.20.2, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.42835969,"data":"cudf-cu12 26.2.1 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.67.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428363462,"data":"opentelemetry-proto 1.38.0 requires protobuf\u003c7.0,\u003e=5.0, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428367077,"data":"grpcio-status 1.71.2 requires protobuf\u003c6.0dev,\u003e=5.26.1, but you have protobuf 7.36.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428370569,"data":"google-adk 1.29.0 requires mcp\u003c2.0.0,\u003e=1.23.0, but you have mcp 1.10.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":192.428374345,"data":"google-adk 1.29.0 requires pydantic\u003c3.0.0,\u003e=2.12.0, but you have pydantic 2.10.6 which is incompatible.\n"}
+,{"stream_name":"stdout","time":196.284717034,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 23.6/23.6 MB 72.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":196.486713159,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 23.6/23.6 MB 72.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":196.726700677,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.1/43.1 MB 44.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":196.928645664,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.1/43.1 MB 44.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":201.444187209,"data":"Applying high-speed FP16 \u0026 crystal-clear quality patches to Wan2GP...\n"}
+,{"stream_name":"stdout","time":201.444261781,"data":"✅ Environment, Dependencies \u0026 Quality Patches Complete!\n"}
+,{"stream_name":"stdout","time":201.473975835,"data":"Linked 29 file references.\n"}
+,{"stream_name":"stdout","time":201.474010554,"data":"\n"}
+,{"stream_name":"stdout","time":201.4740162,"data":"Verifying — these should all print True:\n"}
+,{"stream_name":"stdout","time":201.474020882,"data":" transformer in /tmp: True\n"}
+,{"stream_name":"stdout","time":201.474024255,"data":" transformer in models: True\n"}
+,{"stream_name":"stdout","time":201.474028115,"data":" gemma safetensors in models: True\n"}
+,{"stream_name":"stdout","time":201.474031517,"data":" gemma tokenizer.json in models: True\n"}
+,{"stream_name":"stdout","time":201.474035307,"data":"\n"}
+,{"stream_name":"stdout","time":201.474039114,"data":"Now run the ORIGINAL script's 'Step 2' cell — it should print\n"}
+,{"stream_name":"stdout","time":201.474042975,"data":"'✓ Already exists' for every file and download nothing.\n"}
+,{"stream_name":"stdout","time":201.857084107,"data":"=== Downloading Official LTX-2.5 Distilled Weights ===\n"}
+,{"stream_name":"stdout","time":201.857117416,"data":"  ✓ Already exists: ltx-2.5-22b-distilled_diffusion_model_int8_convrot.safetensors\n"}
+,{"stream_name":"stdout","time":201.857123095,"data":"  ✓ Already exists: ltx-2.5-spatial-upscaler-x2-1.0_bf16.safetensors\n"}
+,{"stream_name":"stdout","time":201.857126865,"data":"  ✓ Already exists: ltx-2.5-temporal-upscaler-x2-1.0_bf16.safetensors\n"}
+,{"stream_name":"stdout","time":201.857130505,"data":"  ✓ Already exists: ltx-2.5-22b_video_embeddings_connector_int8_convrot.safetensors\n"}
+,{"stream_name":"stdout","time":201.857134376,"data":"  ✓ Already exists: ltx-2.5-22b_audio_embeddings_connector_int8_convrot.safetensors\n"}
+,{"stream_name":"stdout","time":201.857137815,"data":"  ✓ Already exists: ltx-2.5-22b_text_embedding_projection_bf16.safetensors\n"}
+,{"stream_name":"stdout","time":201.857141243,"data":"  ✓ Already exists: ltx-2.5-22b_video_vae_bf16.safetensors\n"}
+,{"stream_name":"stdout","time":201.857144715,"data":"  ✓ Already exists: ltx-2.5-22b_audio_vae_bf16.safetensors\n"}
+,{"stream_name":"stdout","time":201.857148132,"data":"  ✓ Already exists: ltx-2.5-22b_vocoder_bf16.safetensors\n"}
+,{"stream_name":"stdout","time":201.857151541,"data":"Preparing LTX-2.5 Text Encoder (gemma4-12b-ltx-v1)...\n"}
+,{"stream_name":"stdout","time":201.859084612,"data":"  ✓ LTX-2.5 Gemma-4 text encoder ready!\n"}
+,{"stream_name":"stdout","time":201.859126518,"data":"\n"}
+,{"stream_name":"stdout","time":201.859132989,"data":"✅ Official LTX-2.5 22B Distilled weights \u0026 environment prepared successfully!\n"}
+,{"stream_name":"stdout","time":201.892789963,"data":"✅ run_aiquest_ltx25.py created successfully!\n"}
+,{"stream_name":"stdout","time":201.927310178,"data":"✅ Patched distilled.py for high-speed FP16 in Wan2GP/models/ltx2/ltx_pipelines/distilled.py\n"}
+,{"stream_name":"stdout","time":201.927332015,"data":"✅ Patched vocoder.py filter \u0026 STFT buffers in Wan2GP/models/ltx2/ltx_core/model/audio_vae/vocoder.py\n"}
+,{"stream_name":"stdout","time":201.92733737,"data":"✓ quant_router handlers already registered\n"}
+,{"stream_name":"stdout","time":201.927341183,"data":"\n"}
+,{"stream_name":"stdout","time":201.927344524,"data":"✅ All patches applied successfully to run_aiquest_ltx25.py!\n"}
+,{"stream_name":"stdout","time":201.927348314,"data":"   → High-Speed FP16 enabled on T4 Tensor Cores (~24s/step)\n"}
+,{"stream_name":"stdout","time":201.927351782,"data":"   → VAE_tile_size=0 (disabled spatial tiling seams)\n"}
+,{"stream_name":"stdout","time":201.9273552,"data":"   → sample_solver=distilled_8_steps (clean deterministic Euler flow-matching)\n"}
+,{"stream_name":"stdout","time":201.927368705,"data":"   → Video VAE \u0026 Audio Vocoder buffer auto-casts applied\n"}
+,{"stream_name":"stdout","time":201.927372593,"data":"   → Video saving fixed (direct uint8 frames without make_grid distortion)\n"}
+,{"stream_name":"stdout","time":201.927376275,"data":"   → Video CFG Scale set to 1.0 (eliminates blowout / posterization artifacts)\n"}
+,{"stream_name":"stdout","time":201.927379976,"data":"   → Audio CFG Scale set to 1.0\n"}
+,{"stream_name":"stdout","time":201.927383469,"data":"   → Default: 5 Seconds at 480p\n"}
+,{"stream_name":"stdout","time":201.92738687,"data":"\n"}
+,{"stream_name":"stdout","time":201.927389797,"data":"🔄 Now re-run Step 4 to launch the server.\n"}
+,{"stream_name":"stdout","time":201.944691505,"data":"✅ run_aiquest_ltx25_headless.py created — this is the file kaggle_headless_step4.py runs.\n"}
+,{"stream_name":"stdout","time":202.722391771,"data":"Warning: Looks like you're using an outdated `kaggle` version (installed: 2.0.2), please consider upgrading to the latest version (2.2.2)\n"}
+,{"stream_name":"stdout","time":203.362306495,"data":"Warning: Looks like you're using an outdated `kaggle` version (installed: 2.0.2), please consider upgrading to the latest version (2.2.2)\n"}
+,{"stream_name":"stdout","time":203.362337213,"data":"Dataset URL: https://www.kaggle.com/datasets/wilfredjasper/ltx-job-request\n"}
+,{"stream_name":"stdout","time":203.362342897,"data":"License(s): other\n"}
+,{"stream_name":"stdout","time":203.362346528,"data":"Downloading ltx-job-request.zip to job_request\n"}
+,{"stream_name":"stderr","time":203.362857927,"data":"\r  0%|          | 0.00/318 [00:00\u003c?, ?B/s]\r100%|██████████| 318/318 [00:00\u003c00:00, 1.19MB/s]\n"}
+,{"stream_name":"stdout","time":203.363603406,"data":"\n"}
+,{"stream_name":"stdout","time":203.566435341,"data":"Warning: Looks like you're using an outdated `kaggle` version (installed: 2.0.2), please consider upgrading to the latest version (2.2.2)\n"}
+,{"stream_name":"stdout","time":203.566464078,"data":"Dataset URL: https://www.kaggle.com/datasets/wilfredjasper/ltx-job-request\n"}
+,{"stream_name":"stdout","time":203.566468704,"data":"License(s): other\n"}
+,{"stream_name":"stdout","time":203.566491551,"data":"Downloading ltx-job-request.zip to job_request\n"}
+,{"stream_name":"stdout","time":203.566495863,"data":"\n"}
+,{"stream_name":"stdout","time":203.566499398,"data":"Loaded 1 job(s) from wilfredjasper/ltx-job-request\n"}
+,{"stream_name":"stdout","time":203.566503218,"data":"  job 0: A futuristic robot walking down a neon street, cinematic lig...\n"}
+,{"stream_name":"stderr","time":203.57063401,"data":"\r  0%|          | 0.00/318 [00:00\u003c?, ?B/s]\r100%|██████████| 318/318 [00:00\u003c00:00, 1.19MB/s]\n"}
+,{"stream_name":"stderr","time":203.570647123,"data":"\n"}
+,{"stream_name":"stderr","time":203.570684916,"data":"\r  0%|          | 0.00/318 [00:00\u003c?, ?B/s]\r100%|██████████| 318/318 [00:00\u003c00:00, 1.19MB/s]\n"}
+,{"stream_name":"stdout","time":239.652510256,"data":"[GGUF][llama.cpp CUDA] kernels unavailable, using fallback\n"}
+,{"stream_name":"stdout","time":239.653359601,"data":"GPUs Available: 2\n"}
+,{"stream_name":"stdout","time":239.654152059,"data":"  GPU 0: Tesla T4 (14.6 GB VRAM)\n"}
+,{"stream_name":"stdout","time":239.654940038,"data":"  GPU 1: Tesla T4 (14.6 GB VRAM)\n"}
+,{"stream_name":"stdout","time":239.655665234,"data":"RAM: 31.3 GB total, 28.8 GB available\n"}
+,{"stream_name":"stdout","time":239.656560716,"data":"\n"}
+,{"stream_name":"stdout","time":239.657184735,"data":"=== Loading LTX-2.5 22B Distilled Model in Memory (One-Time Startup) ===\n"}
+,{"stream_name":"stdout","time":239.664816067,"data":"  Transformer : ltx-2.5-22b-distilled_diffusion_model_int8_convrot.safetensors\n"}
+,{"stream_name":"stdout","time":239.665597863,"data":"  Text Encoder: gemma4-12b-ltx-v1_int8_convrot.safetensors\n"}
+,{"stream_name":"stdout","time":300.887914327,"data":"\n"}
+,{"stream_name":"stdout","time":300.888909263,"data":"Applying mmgp Profile 4 with Partial Pinning \u0026 Free RAM Headroom (6000 MB transformer budget, Async DMA Transfers)...\n"}
+,{"stream_name":"stdout","time":300.889708336,"data":"\u001b[1m\u001b[95m************ Memory Management for the GPU Poor (mmgp 3.7.14) by DeepBeepMeep ************\u001b[0m\u001b[0m\n"}
+,{"stream_name":"stdout","time":301.621211152,"data":"Partial pinning of data of 'transformer' to reserved RAM\n"}
+,{"stream_name":"stdout","time":384.715354644,"data":"The model was partially pinned to reserved RAM: 51 large blocks spread across 11091.55 MB\n"}
+,{"stream_name":"stdout","time":384.719758877,"data":"Hooked to model 'transformer' (X0Model)\n"}
+,{"stream_name":"stdout","time":385.246531529,"data":"Async loading plan for model 'transformer' : 5079.77 MB will be preloaded (base size of 643.23 MB + 25.0% of recurrent layers data) with a 369.71 MB async circular shuttle\n"}
+,{"stream_name":"stdout","time":385.252173107,"data":"Hooked to model 'text_encoder' (Gemma4UnifiedForCausalLM)\n"}
+,{"stream_name":"stdout","time":385.349065781,"data":"Async loading plan for model 'text_encoder' : base size of 1920.01 MB will be preloaded with a 230.75 MB async circular shuttle\n"}
+,{"stream_name":"stdout","time":385.350803438,"data":"Hooked to model 'text_embedding_projection' (GemmaFeaturesExtractorProjLinear)\n"}
+,{"stream_name":"stdout","time":385.351764456,"data":"Hooked to model 'vae' (VideoDecoder)\n"}
+,{"stream_name":"stdout","time":385.36997838,"data":"Hooked to model 'video_encoder' (VideoEncoder)\n"}
+,{"stream_name":"stdout","time":385.385909419,"data":"Hooked to model 'audio_encoder' (AudioEncoder)\n"}
+,{"stream_name":"stdout","time":385.394561534,"data":"Hooked to model 'audio_decoder' (AudioDecoder)\n"}
+,{"stream_name":"stdout","time":385.410679179,"data":"Hooked to model 'vocoder' (VocoderWithBWE)\n"}
+,{"stream_name":"stdout","time":385.524069081,"data":"Hooked to model 'spatial_upsampler' (LatentUpsampler)\n"}
+,{"stream_name":"stdout","time":385.530126399,"data":"Hooked to model 'video_embeddings_connector' (Embeddings1DConnector)\n"}
+,{"stream_name":"stdout","time":385.547538567,"data":"Async loading plan for model 'video_embeddings_connector' : 578.22 MB will be preloaded (base size of 1.00 MB + 37.5% of recurrent layers data) with a 192.41 MB async circular shuttle\n"}
+,{"stream_name":"stdout","time":385.548456053,"data":"Hooked to model 'audio_embeddings_connector' (Embeddings1DConnector)\n"}
+,{"stream_name":"stdout","time":386.549564492,"data":"\n"}
+,{"stream_name":"stdout","time":386.550477259,"data":"✅ Setup complete! LTX-2.5 22B Distilled Model loaded \u0026 pinned in memory permanently.\n"}
+,{"stream_name":"stdout","time":386.998363852,"data":"\n"}
+,{"stream_name":"stdout","time":387.000085342,"data":"🚀 Launching AIQUEST Academy Gradio Web Interface...\n"}
+,{"stream_name":"stdout","time":387.566176404,"data":"* Running on local URL:  http://127.0.0.1:7860\n"}
+,{"stream_name":"stdout","time":393.086989081,"data":"Loaded as API: http://127.0.0.1:7860/ ✔\n"}
+,{"stream_name":"stdout","time":393.377449759,"data":"\n"}
+,{"stream_name":"stdout","time":393.377495923,"data":"=== Generating job 1/1 ===\n"}
+,{"stream_name":"stdout","time":703.892655103,"data":"Job 1 status: ✅ Video generated in 305.4s! Seed: 4248049604 | 672x384 | 49 frames | Saved: /kaggle/working/Wan2GP/outputs/ltx25_20260911_210015_seed4248049604_with_audio.mp4\n"}
+,{"stream_name":"stdout","time":703.893924339,"data":"\n"}
+,{"stream_name":"stdout","time":703.893938652,"data":"All jobs complete.\n"}
+,{"stream_name":"stdout","time":703.893942981,"data":"Copied 2 output file(s) to /kaggle/working/final_output\n"}
+,{"stream_name":"stdout","time":703.893946986,"data":"Removed the Wan2GP working directory — kernel output should now be small.\n"}
+,{"stream_name":"stdout","time":703.893951605,"data":"Shutting down local server and exiting.\n"}
+,{"stream_name":"stdout","time":707.286537104,"data":"Done — this kernel run should now finish naturally.\n"}
+,{"stream_name":"stderr","time":713.154627939,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":713.154676275,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":713.323980651,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":713.324009356,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":714.12310423,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":714.434548254,"data":"[NbConvertApp] Writing 114097 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":716.958931706,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":717.898777127,"data":"[NbConvertApp] Writing 497336 bytes to __results__.html\n"}
+]
