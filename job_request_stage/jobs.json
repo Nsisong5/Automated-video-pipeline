@@ -1,9 +1,10 @@
 {
   "jobs": [
     {
-      "prompt": "A futuristic robot walking down a neon street, cinematic lighting",
-      "duration": "2 Seconds (49 frames - Fast)",
-      "resolution": "Fast Preview (384p - ~1-2 min)"
+      "prompt": "A medium tracking shot opens on a 30-year-old female clockmaker with short, silver-streaked hair, wearing a worn leather apron over a dark turtleneck. She sits at a wooden workbench in a dimly lit, cozy workshop flooded by warm amber backlight spilling through dusty window panes. With steady hands, she carefully lowers a glowing brass gear into a complex mechanical clock movement using fine tweezers. The camera performs a slow, smooth dolly-in towards her face as her eyes widen slightly and her lips curve into a subtle smile. Soft ambient ticking of multiple pendulum clocks fills the room alongside the faint metallic clink of precision tools.",
+      "duration": "5 Seconds (121 frames - Long)",
+      "resolution": "Fast Preview (384p - ~1-2 min)",
+      "seed": 37373786373873838
     }
   ]
 }

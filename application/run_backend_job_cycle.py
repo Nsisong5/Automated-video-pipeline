@@ -12,8 +12,8 @@ Full backend-driven cycle:
 import os
 import json
 
-from kaggle_accounts import get_next_account
-from kaggle_notebook_control import (
+from infrastructure.compute.kaggle.accounts import get_next_account
+from infrastructure.compute.kaggle.notebook_control import (
     push_job_request, start_notebook, wait_for_completion, get_status,
     fetch_outputs, delete_dataset, JOB_DATASET_SLUG,
 )

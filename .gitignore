@@ -1,0 +1,48 @@
+# Byte-compiled / Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environments
+venv/
+.venv/
+env/
+.env/
+ENV/
+
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+
+# FastAPI / Uvicorn / Database
+*.db
+*.sqlite3
+celerybeat-schedule
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Custom & Project-Specific Files
+AI_state
+current_traceback.md
+notebook_outputs
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS Generated
+.DS_Store
+Thumbs.db
+
+#a couple more
+
+modules_docs
