@@ -24,7 +24,15 @@ status_use_case = GetGenerationStatus(gen_adapter, job_repo)
 result_use_case = GetGenerationResult(gen_adapter, job_repo)
 
 # 2. Submit
-request = VideoGenerationRequest(prompt="A cinematic 4k close-up shot of a majestic snow leopard in the Himalayas.", duration_seconds=5)
+PROMPT_FILE = "prompt.txt"
+if not os.path.exists(PROMPT_FILE):
+    logger.error(f"Prompt file not found: {PROMPT_FILE}")
+    sys.exit(1)
+
+with open(PROMPT_FILE, "r") as f:
+    prompt_text = f.read().strip()
+
+request = VideoGenerationRequest(prompt=prompt_text, duration_seconds=5)
 job_id = request_use_case.execute(request)
 logger.info(f"Submitted job: {job_id}")
 

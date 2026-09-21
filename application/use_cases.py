@@ -2,8 +2,13 @@ import logging
 from uuid import UUID, uuid4
 from datetime import datetime
 from typing import Optional
-from domain.entities import VideoGenerationRequest, GenerationJob, JobStatus, GenerationResult, GenerationError
-from application.ports import VideoGenerationPort, JobRepositoryPort
+from domain.entities import (
+    VideoGenerationRequest, GenerationJob, JobStatus, GenerationResult, GenerationError,
+    Production, Scene, ProductionStatus, SceneStatus, ArtifactReference
+)
+from application.ports import (
+    VideoGenerationPort, JobRepositoryPort, ProductionRepositoryPort, ArtifactStoragePort
+)
 
 logger = logging.getLogger(__name__)
 
@@ -98,4 +103,111 @@ class GetGenerationResult:
             logger.info(f"[job_id={job_id}] GetGenerationResult: Returning result from repository")
             
         return job.result
+
+class CreateProduction:
+    def __init__(self, repo: ProductionRepositoryPort):
+        self.repo = repo
+
+    def execute(self, title: str, channel_id: str, requests: list[VideoGenerationRequest]) -> UUID:
+        production_id = uuid4()
+        scenes = [
+            Scene(
+                scene_id=uuid4(),
+                production_id=production_id,
+                sequence_index=i,
+                generation_request=req
+            ) for i, req in enumerate(requests)
+        ]
+        production = Production(
+            production_id=production_id,
+            title=title,
+            channel_id=channel_id,
+            scenes=scenes
+        )
+        self.repo.save(production)
+        logger.info(f"[production_id={production_id}] CreateProduction: Created production '{title}' with {len(scenes)} scenes")
+        return production_id
+
+class StartProduction:
+    def __init__(self, repo: ProductionRepositoryPort, gen_port: VideoGenerationPort):
+        self.repo = repo
+        self.gen_port = gen_port
+
+    def execute(self, production_id: UUID) -> None:
+        production = self.repo.get(production_id)
+        if not production:
+            raise ValueError("Production not found")
+            
+        production.transition_to(ProductionStatus.RUNNING)
+        
+        # Submit first scene
+        first_scene = production.scenes[0]
+        first_scene.transition_to(SceneStatus.RUNNING)
+        
+        external_ref = self.gen_port.submit(first_scene.generation_request)
+        first_scene.job_ref = str(external_ref)
+        
+        self.repo.save(production)
+        logger.info(f"[production_id={production_id}] StartProduction: Started scene 0 (job_ref={external_ref})")
+
+class GetProductionStatus:
+    def __init__(
+        self, 
+        repo: ProductionRepositoryPort, 
+        gen_port: VideoGenerationPort, 
+        storage_port: ArtifactStoragePort
+    ):
+        self.repo = repo
+        self.gen_port = gen_port
+        self.storage_port = storage_port
+
+    def execute(self, production_id: UUID) -> Production:
+        production = self.repo.get(production_id)
+        if not production:
+            raise ValueError("Production not found")
+        
+        if production.status in [ProductionStatus.SUCCEEDED, ProductionStatus.FAILED]:
+            return production
+            
+        # Find current scene
+        active_scene = next((s for s in production.scenes if s.status == SceneStatus.RUNNING), None)
+        
+        if active_scene:
+            # Poll status
+            job_status = self.gen_port.get_status(UUID(active_scene.job_ref))
+            
+            if job_status == JobStatus.SUCCEEDED:
+                # 1. Fetch result
+                result = self.gen_port.get_result(UUID(active_scene.job_ref))
+                
+                # 2. Store artifact (Module 6 path)
+                artifact = self.storage_port.store(
+                    result.output_artifacts[0].location,
+                    {"production_id": str(production.production_id), "scene_id": str(active_scene.scene_id)}
+                )
+                active_scene.generated_artifact = artifact
+                active_scene.transition_to(SceneStatus.SUCCEEDED)
+                logger.info(f"[production_id={production_id}] GetProductionStatus: Scene {active_scene.sequence_index} succeeded")
+                
+                # 3. Start next scene or finalize
+                next_index = active_scene.sequence_index + 1
+                if next_index < len(production.scenes):
+                    next_scene = production.scenes[next_index]
+                    next_scene.transition_to(SceneStatus.RUNNING)
+                    external_ref = self.gen_port.submit(next_scene.generation_request)
+                    next_scene.job_ref = str(external_ref)
+                    logger.info(f"[production_id={production_id}] GetProductionStatus: Started scene {next_index}")
+                else:
+                    production.transition_to(ProductionStatus.SUCCEEDED)
+                    logger.info(f"[production_id={production_id}] GetProductionStatus: Production SUCCEEDED")
+                
+                self.repo.save(production)
+            
+            elif job_status == JobStatus.FAILED:
+                active_scene.transition_to(SceneStatus.FAILED)
+                production.transition_to(ProductionStatus.FAILED)
+                self.repo.save(production)
+                logger.error(f"[production_id={production_id}] GetProductionStatus: Scene {active_scene.sequence_index} FAILED")
+                
+        return production
 

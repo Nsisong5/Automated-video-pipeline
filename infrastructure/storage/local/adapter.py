@@ -15,24 +15,37 @@ class LocalArtifactStorageAdapter:
         logger.info(f"Initialized LocalArtifactStorageAdapter in {self.storage_dir}")
 
     def store(self, local_path: str, metadata: dict[str, Any]) -> ArtifactReference:
-        # For now, just track the reference to the existing file
+        # Module 6: Support hierarchical scene storage
+        production_id = metadata.get("production_id")
+        scene_id = metadata.get("scene_id")
+        
+        if production_id and scene_id:
+            target_dir = os.path.join(self.storage_dir, "productions", production_id, "scenes", scene_id)
+            os.makedirs(target_dir, exist_ok=True)
+            target_path = os.path.join(target_dir, "video.mp4")
+            
+            import shutil
+            shutil.copy2(local_path, target_path)
+            actual_path = target_path
+            logger.info(f"LocalArtifactStorageAdapter: Stored scene artifact to {actual_path}")
+        else:
+            actual_path = local_path
+            logger.info(f"LocalArtifactStorageAdapter: Storing artifact at original location {actual_path}")
+
         artifact_id = str(uuid4())
-        logger.info(f"LocalArtifactStorageAdapter: Storing artifact - id={artifact_id}, source={local_path}, metadata={metadata}")
         
         try:
-            # Placeholder for actual storage/move logic if needed
             # For now, ensure file exists
-            if not os.path.exists(local_path):
-                raise FileNotFoundError(f"Source file not found: {local_path}")
+            if not os.path.exists(actual_path):
+                raise FileNotFoundError(f"Source/Target file not found: {actual_path}")
             
-            logger.info(f"LocalArtifactStorageAdapter: Successfully stored artifact {artifact_id}")
             return ArtifactReference(
                 artifact_id=artifact_id,
                 storage_kind=StorageKind.LOCAL,
-                location=local_path
+                location=actual_path
             )
         except Exception:
-            logger.exception(f"LocalArtifactStorageAdapter: Failed to store artifact from {local_path}")
+            logger.exception(f"LocalArtifactStorageAdapter: Failed to store artifact from {actual_path}")
             raise
 
     def retrieve(self, ref: ArtifactReference) -> str:

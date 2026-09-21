@@ -1,8 +1,8 @@
 {
   "jobs": [
     {
-      "prompt": "A cinematic 4k close-up shot of a majestic snow leopard in the Himalayas.",
-      "duration": "5 Seconds (121 frames - Long)",
+      "prompt": "A deer drinking from the river",
+      "duration": "2 Seconds (49 frames - Fast)",
       "resolution": "Fast Preview (384p - ~1-2 min)",
       "seed": -1
     }
