@@ -70,5 +70,119 @@
     "status": "QUEUED",
     "external_ref": "730c4fc0-11f3-4178-a30d-2303e795cae8",
     "prompt": "A medium tracking shot opens on a 30-year-old female clockmaker with short, silver-streaked hair, wearing a worn leather apron over a dark turtleneck. She sits at a wooden workbench in a dimly lit, cozy workshop flooded by warm amber backlight spilling through dusty window panes. With steady hands, she carefully lowers a glowing brass gear into a complex mechanical clock movement using fine tweezers. The camera performs a slow, smooth dolly-in towards her face as her eyes widen slightly and her lips curve into a subtle smile. Soft ambient ticking of multiple pendulum clocks fills the room alongside the faint metallic clink of precision tools."
+  },
+  "733777a7-b674-4bc9-8376-924712a82610": {
+    "job_id": "733777a7-b674-4bc9-8376-924712a82610",
+    "status": "QUEUED",
+    "external_ref": "5e841cc3-f68c-45f4-8a42-691b37d0af3d",
+    "prompt": "A close-up shot of a single drop of water falling onto a calm, dark surface in slow motion, creating a perfectly symmetrical ripple that spreads outward as light reflects off the liquid"
+  },
+  "fc064e82-dcca-43ca-a5ac-3116da631303": {
+    "job_id": "fc064e82-dcca-43ca-a5ac-3116da631303",
+    "status": "QUEUED",
+    "external_ref": "741626db-bc2b-42ce-b08b-7aea31f8fa65",
+    "prompt": "A high-speed camera shot of a vibrant blue kingfisher diving into crystal-clear water, creating a sudden splash with glowing, backlit water droplets in warm golden-hour light. Photorealistic, 8k resolution, cinematic lighting, sharp focus, slow-motion effect, dynamic movement, hyper-detailed"
+  },
+  "504ae70c-3cfb-46e0-8fd3-46dd2de463ea": {
+    "job_id": "504ae70c-3cfb-46e0-8fd3-46dd2de463ea",
+    "status": "QUEUED",
+    "external_ref": "d5408d6f-4fe3-49c1-8db2-4510467bf673",
+    "prompt": "A high-speed camera shot of a vibrant blue kingfisher diving into crystal-clear water, creating a sudden splash with glowing, backlit water droplets in warm golden-hour light. Photorealistic, 8k resolution, cinematic lighting, sharp focus, slow-motion effect, dynamic movement, hyper-detailed"
+  },
+  "7f9b133e-46dd-4350-b5aa-858f0bc3cf49": {
+    "job_id": "7f9b133e-46dd-4350-b5aa-858f0bc3cf49",
+    "status": "RUNNING",
+    "external_ref": "093cf84f-7889-41e8-95c5-2ec5044a3dd5",
+    "prompt": "A cinematic 4k close-up shot of a majestic snow leopard in the Himalayas."
+  },
+  "39d6ae03-b37d-43cb-9bfd-787f9805c892": {
+    "job_id": "39d6ae03-b37d-43cb-9bfd-787f9805c892",
+    "status": "QUEUED",
+    "external_ref": "6e12e65d-eda2-428c-a798-207bd00b3b3e",
+    "prompt": "A single drop of rain hits a clear water puddle in extreme slow motion, high-definition ripples spreading outward"
+  },
+  "b6714cad-b449-41d4-83cd-997374f4f508": {
+    "job_id": "b6714cad-b449-41d4-83cd-997374f4f508",
+    "status": "QUEUED",
+    "external_ref": "d68ec913-03c5-4577-9a87-998b9b03641d",
+    "prompt": "A single drop of rain hits a clear water puddle in extreme slow motion, high-definition ripples spreading outward"
+  },
+  "f3679487-2f26-463d-b860-a951be5bb1a9": {
+    "job_id": "f3679487-2f26-463d-b860-a951be5bb1a9",
+    "status": "RUNNING",
+    "external_ref": "4247e06a-20fd-47cc-a25c-da635c72202c",
+    "prompt": "A single drop of rain hits a clear water puddle in extreme slow motion, high-definition ripples spreading outward"
+  },
+  "97e0e6ec-4051-4ad6-be7a-97da623917c9": {
+    "job_id": "97e0e6ec-4051-4ad6-be7a-97da623917c9",
+    "status": "QUEUED",
+    "external_ref": "22634752-4ae7-43ac-92d1-a89b9436498e",
+    "prompt": "A medium close-up shot of a weathered clockmaker in a dimly lit workshop carefully adjusting a tiny brass gear with tweezers. Warm golden candlelight flickers across his face, casting soft shadows. Cinematic lighting, photorealistic, 8k resolution, shallow depth of field, slow motion at 60fps."
+  },
+  "e1c78aa5-02f2-40bf-bdd8-d59229bba784": {
+    "job_id": "e1c78aa5-02f2-40bf-bdd8-d59229bba784",
+    "status": "QUEUED",
+    "external_ref": "dce7e65c-5db9-425b-a70f-100fcf7d0cf9",
+    "prompt": "A medium close-up shot of a weathered clockmaker in a dimly lit workshop carefully adjusting a tiny brass gear with tweezers. Warm golden candlelight flickers across his face, casting soft shadows. Cinematic lighting, photorealistic, 8k resolution, shallow depth of field, slow motion at 60fps."
+  },
+  "09b58cc3-80fe-46ec-9ffa-23100b075899": {
+    "job_id": "09b58cc3-80fe-46ec-9ffa-23100b075899",
+    "status": "QUEUED",
+    "external_ref": "d4c2476f-62f5-4125-8e23-4db23207f2e0",
+    "prompt": "A sleek, matte-black futuristic drone floating completely still in place, its high-tech core pulsing with a deep cyan LED light, shallow depth of field, dramatic moody lighting, ultra-detailed 8k resolution, cinematic atmosphere"
+  },
+  "67735ab7-e59a-4907-bbce-48592fff8379": {
+    "job_id": "67735ab7-e59a-4907-bbce-48592fff8379",
+    "status": "QUEUED",
+    "external_ref": "33761811-f4cf-4481-90b2-bfb13ac09919",
+    "prompt": "Close-up shot of a glowing amber embers ember bed suddenly flaring into a vivid blue flame, high detail, 4k resolution, cinematic lighting, slow motion"
+  },
+  "464205b3-326e-4d18-8d7d-0626fd3a304a": {
+    "job_id": "464205b3-326e-4d18-8d7d-0626fd3a304a",
+    "status": "SUCCEEDED",
+    "external_ref": "36e70f9f-6ff3-4a3c-babd-8ca75a0cb458",
+    "prompt": "Close-up shot, eye level. A middle-aged man with dark hair wearing a charcoal sweater sits in a softly lit, warm caf\u00e9 with amber ambient light bokeh in the background. He takes a slow breath, turns his gaze slightly toward the camera, and offers a warm, gentle smile. The camera remains static with a shallow depth of field. Audio: low room hum and soft, distant clinking of coffee cups. "
+  },
+  "9d3e9d98-3ab5-42c1-ab5a-16ca0ec2f0c0": {
+    "job_id": "9d3e9d98-3ab5-42c1-ab5a-16ca0ec2f0c0",
+    "status": "QUEUED",
+    "external_ref": "a96db140-f3d7-43a5-a61b-3a4c2fda2922",
+    "prompt": "A medium close-up shot of a high-tech robotic iris slowly focusing and expanding, intricate metallic gears moving smoothly within the golden optical lens. Warm dramatic side-lighting, subtle particle dust floating in cinematic light beams, shallow depth of field, 8k resolution, photorealistic texture, continuous fluid motion."
+  },
+  "d7f6ce6e-7779-494a-816e-6210a343cc01": {
+    "job_id": "d7f6ce6e-7779-494a-816e-6210a343cc01",
+    "status": "QUEUED",
+    "external_ref": "eb2aaef9-b6ea-4e12-a791-ad1148a6dd61",
+    "prompt": "A vivid, highly detailed ultra-HD video of a drop of water falling into a still turquoise pool in extreme slow motion, high speed camera, cinematic lighting, 8k resolution, photorealistic."
+  },
+  "211e2858-f396-4a63-abdc-8b59d1dda261": {
+    "job_id": "211e2858-f396-4a63-abdc-8b59d1dda261",
+    "status": "QUEUED",
+    "external_ref": "463f7fcc-5d3e-442c-8035-63b2e72a8122",
+    "prompt": "A vivid, highly detailed ultra-HD video of a drop of water falling into a still turquoise pool in extreme slow motion, high speed camera, cinematic lighting, 8k resolution, photorealistic."
+  },
+  "f4a47ebb-7218-4058-8d97-8f7845fa3cd6": {
+    "job_id": "f4a47ebb-7218-4058-8d97-8f7845fa3cd6",
+    "status": "QUEUED",
+    "external_ref": "351b2af9-8ea5-4918-aca6-09fd8a4e4065",
+    "prompt": "A close-up shot of a glowing amber liquid pouring slowly into a crystal glass in cinematic slow motion. As the liquid hits the glass, fine micro-bubbles swirl rapidly while dramatic volumetric side-lighting catches the mist, creating sharp light reflections. Highly detailed, photorealistic 8K, shallow depth of field, subtle continuous dynamic camera push-in"
+  },
+  "870f0481-5fbe-4705-b0cb-81a8c24feb48": {
+    "job_id": "870f0481-5fbe-4705-b0cb-81a8c24feb48",
+    "status": "QUEUED",
+    "external_ref": "5968793c-423c-4410-baec-3fa98af2a187",
+    "prompt": "A close-up, 24fps cinematic shot of a drop of water falling into a pitch-black liquid pool in slow motion. As it strikes the surface, intricate ripples expand outward in high detail. Soft studio lighting creates crisp metallic reflections on the liquid surface. Ultra-realistic, sharp focus, 8k resolution, smooth fluid dynamics"
+  },
+  "3145311e-09b7-4684-8f3a-73842c6af3b3": {
+    "job_id": "3145311e-09b7-4684-8f3a-73842c6af3b3",
+    "status": "RUNNING",
+    "external_ref": "97c238c5-4c27-4ed5-bd02-ee747f53884c",
+    "prompt": "A cinematic 4k close-up shot of a majestic snow leopard in the Himalayas."
+  },
+  "8affafe0-b618-49f8-b30c-6bc1a2468758": {
+    "job_id": "8affafe0-b618-49f8-b30c-6bc1a2468758",
+    "status": "SUCCEEDED",
+    "external_ref": "b5c5fd69-3b36-46c8-987c-060184a49035",
+    "prompt": "A cinematic 4k close-up shot of a majestic snow leopard in the Himalayas."
   }
 }

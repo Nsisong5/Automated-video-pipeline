@@ -129,7 +129,9 @@ def start_notebook(username: str) -> None:
     notebook_path = os.path.join(pull_dir, notebook_filename)
 
     with open(notebook_path) as f:
+
         notebook = json.load(f)
+
 
     kaggle_block = notebook.get("metadata", {}).get("kaggle", {})
     print(f"Notebook's OWN embedded accelerator metadata BEFORE patch: {kaggle_block}")

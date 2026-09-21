@@ -1,18 +1,41 @@
-"""
-The Kaggle run already finished successfully (851.6s, real output produced).
-Skip the full cycle — just grab what's already there.
-"""
 
-from kaggle_accounts import get_next_account
-from kaggle_notebook_control import fetch_outputs, get_status
+import sys
+from uuid import UUID
+from application.use_cases import GetGenerationStatus, GetGenerationResult
+from infrastructure.compute.kaggle.adapter import KaggleComputeAdapter
+from infrastructure.generation.wan2gp.adapter import Wan2GPVideoGenerationAdapter
+from infrastructure.persistence.job_repository import JsonFileJobRepository
 
-account = get_next_account()
-username = account["username"]
+def main():
+    if len(sys.argv) < 2:
+        print("Usage: python3 fetch_completed_run.py <job_id_uuid>")
+        sys.exit(1)
+        
+    try:
+        job_id = UUID(sys.argv[1])
+    except ValueError:
+        print("Invalid UUID format.")
+        sys.exit(1)
 
-print("Current status (should show a completed/finished state now):")
-print(get_status(username))
+    job_repo = JsonFileJobRepository(db_path="jobs.json")
+    compute_adapter = KaggleComputeAdapter()
+    gen_adapter = Wan2GPVideoGenerationAdapter(compute_adapter=compute_adapter)
+    
+    status_use_case = GetGenerationStatus(gen_adapter, job_repo)
+    result_use_case = GetGenerationResult(gen_adapter, job_repo)
+    
+    print(f"Checking status for job {job_id}...")
+    status = status_use_case.execute(job_id)
+    print(f"Status: {status.value}")
+    
+    if status.value == "SUCCEEDED":
+        print("Retrieving and downloading results...")
+        result = result_use_case.execute(job_id)
+        print(f"Successfully downloaded {len(result.output_artifacts)} video clip(s)!")
+        for art in result.output_artifacts:
+            print(f"Saved locally to: {art.location}")
+    else:
+        print(f"Job is in state '{status.value}' and cannot be fetched yet.")
 
-output_dir = fetch_outputs(username)
-print(f"\nDownloaded to: {output_dir}")
-print("Look inside for the .mp4 — per the Kaggle log it should be something like")
-print("ltx25_<timestamp>_seed404229316_with_audio.mp4")
+if __name__ == "__main__":
+    main()
