@@ -1,5 +1,5 @@
-from typing import Protocol, runtime_checkable, Any, Optional
-from dataclasses import dataclass
+from typing import Protocol, runtime_checkable, Any, Optional, Sequence
+from dataclasses import dataclass, field
 from uuid import UUID
 from enum import Enum
 from domain.entities import (
@@ -9,6 +9,7 @@ from domain.entities import (
     JobStatus,
     GenerationJob,
     Production,
+    ReferenceAsset,
 )
 
 # --- DTOs / Placeholders for Port signatures ---
@@ -25,17 +26,19 @@ class ProviderCapabilities(Enum):
     IMAGE_TO_VIDEO = "IMAGE_TO_VIDEO"
     SEED_CONTROL = "SEED_CONTROL"
     DURATION_CONTROL = "DURATION_CONTROL"
+    REFERENCE_ASSETS = "REFERENCE_ASSETS"
 
 @dataclass(frozen=True)
 class ComputeWorkload:
     jobs: list[dict[str, Any]]
+    reference_assets: list[dict[str, Any]] = field(default_factory=list)
 
 
 # --- Port Definitions ---
 
 @runtime_checkable
 class VideoGenerationPort(Protocol):
-    def submit(self, request: VideoGenerationRequest) -> UUID: ...
+    def submit(self, requests: list[VideoGenerationRequest], reference_assets: Sequence[ReferenceAsset] = ()) -> UUID: ...
     def get_status(self, job_id: UUID) -> JobStatus: ...
     def get_result(self, job_id: UUID) -> GenerationResult: ...
     def get_capabilities(self) -> set[ProviderCapabilities]: ...
@@ -63,3 +66,11 @@ class ProductionRepositoryPort(Protocol):
     def save(self, production: Production) -> None: ...
     def get(self, production_id: UUID) -> Optional[Production]: ...
     def find_in_flight(self) -> list[Production]: ...
+
+@runtime_checkable
+class FrameExtractionPort(Protocol):
+    def extract_final_frame(self, video: ArtifactReference) -> ArtifactReference: ...
+
+@runtime_checkable
+class VideoAssemblyPort(Protocol):
+    def assemble(self, ordered_clips: list[ArtifactReference]) -> ArtifactReference: ...

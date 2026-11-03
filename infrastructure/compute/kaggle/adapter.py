@@ -2,6 +2,8 @@ import os
 import json
 import subprocess
 import logging
+import shutil
+import tempfile
 from typing import Any, Optional
 from uuid import UUID, uuid4
 from application.ports import ComputeExecutionPort, ComputeJobStatus, ComputeWorkload
@@ -45,6 +47,17 @@ class KaggleComputeAdapter:
         self.in_flight_jobs[job_id] = username
         self._save_in_flight_jobs()
         logger.info(f"[job_id={job_id}] KaggleComputeAdapter: Submitting to Kaggle - account={username}, kernel_ref={kernel_ref}")
+
+        # Stage start frames if required
+        stage_dir = "job_request_stage"
+        os.makedirs(stage_dir, exist_ok=True)
+        for job in workload.jobs:
+            if "start_frame_path" in job:
+                source_path = job["start_frame_path"]
+                filename = job["start_frame_filename"]
+                target_path = os.path.join(stage_dir, filename)
+                shutil.copy2(source_path, target_path)
+                logger.info(f"[job_id={job_id}] KaggleComputeAdapter: Staged start frame {filename} to {target_path}")
 
         try:
             notebook_control.push_job_request(username, workload.jobs)
@@ -98,8 +111,8 @@ class KaggleComputeAdapter:
             logger.warning(f"[job_id={job_id}] KaggleComputeAdapter: Result fetch failed - unknown user/job_id")
             return []
 
-        # Download results
-        output_dir = f"notebook_outputs/{job_id}"
+        # Download results to system temporary directory to avoid workspace clutter
+        output_dir = os.path.join(tempfile.gettempdir(), "ltx_notebook_outputs", str(job_id))
         logger.info(f"[job_id={job_id}] KaggleComputeAdapter: Fetching outputs to {output_dir}")
 
         # Ensure we don't have a stale directory from a failed previous attempt
@@ -151,16 +164,17 @@ class KaggleComputeAdapter:
             logger.warning(f"[job_id={job_id}] KaggleComputeAdapter: Audio fallback - No audio-muxed artifact found. Using plain video(s): {[a.location for a in plain_artifacts]}")
             canonical = plain_artifacts
         else:
-            logger.error(f"[job_id={job_id}] KaggleComputeAdapter: No valid artifacts found in {output_dir}")
+            logger.error(f"[job_id={job_id}] KaggleComputeAdapter: No valid artifacts found in {output_dir}. This may be due to an incomplete download or network glitch. Raising transient error to allow retry on next poll.")
+            raise RuntimeError(f"No valid artifacts found in {output_dir} (possible incomplete download / network issue).")
 
         self.job_results[job_id] = canonical
 
-        # CLEANUP: Delete job-request dataset now that outputs are fetched
+        # CLEANUP: Delete job-request dataset now that outputs are fetched and verified
         try:
             notebook_control.delete_dataset(username, notebook_control.JOB_DATASET_SLUG)
             logger.info(f"[job_id={job_id}] KaggleComputeAdapter: Dataset deleted for user={username}")
-        except Exception:
-            logger.exception(f"[job_id={job_id}] KaggleComputeAdapter: Failed to delete dataset for user={username}")
+        except Exception as e:
+            logger.warning(f"[job_id={job_id}] KaggleComputeAdapter: Failed to delete dataset for user={username} (non-fatal): {e}")
 
         return canonical
 

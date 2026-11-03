@@ -1,1 +1,17 @@
-A cinematic 4k close-up shot of a majestic snow leopard in the Himalayas.
+[
+  {
+    "prompt": "A peaceful mountain lake at sunset",
+    "duration_seconds": 2,
+    "chain_from_previous": false
+  },
+  {
+    "prompt": "A ripple starts on the lake surface",
+    "duration_seconds": 2,
+    "chain_from_previous": true
+  },
+  {
+    "prompt": "A close up of the water ripple",
+    "duration_seconds": 2,
+    "chain_from_previous": true
+  }
+]

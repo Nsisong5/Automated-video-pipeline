@@ -2,7 +2,7 @@ import unittest
 from uuid import uuid4
 from domain.entities import VideoGenerationRequest
 from application.use_cases import RequestVideoGeneration
-from infrastructure.generation.wan2gp.fakes import FakeVideoGenerationAdapter
+from infrastructure.generation.ltx25.fakes import FakeVideoGenerationAdapter
 from infrastructure.persistence.fakes import FakeJobRepository
 
 class TestUseCases(unittest.TestCase):

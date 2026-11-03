@@ -1,9 +1,11 @@
 from api.config import settings
 from infrastructure.compute.kaggle.adapter import KaggleComputeAdapter
-from infrastructure.generation.wan2gp.adapter import Wan2GPVideoGenerationAdapter
+from infrastructure.generation.ltx25.adapter import LTXVideoGenerationAdapter
 from infrastructure.persistence.job_repository import JsonFileJobRepository
 from infrastructure.persistence.production_repository import JsonFileProductionRepository
 from infrastructure.storage.local.adapter import LocalArtifactStorageAdapter
+from infrastructure.media.ffmpeg.adapter import FFmpegFrameExtractionAdapter, FFmpegVideoAssemblyAdapter
+from infrastructure.media.ffmpeg.client import FfmpegClient
 from application.use_cases import (
     RequestVideoGeneration, GetGenerationStatus, GetGenerationResult,
     CreateProduction, StartProduction, GetProductionStatus as GetProductionStatusUseCase
@@ -23,7 +25,7 @@ def get_storage_adapter():
     return LocalArtifactStorageAdapter(storage_dir=settings.ARTIFACT_STORAGE_DIR)
 
 def get_generation_port():
-    return Wan2GPVideoGenerationAdapter(compute_adapter=get_compute_adapter())
+    return LTXVideoGenerationAdapter(compute_adapter=get_compute_adapter())
 
 def get_request_use_case():
     return RequestVideoGeneration(get_generation_port(), get_job_repo())
@@ -41,4 +43,9 @@ def get_start_production_use_case():
     return StartProduction(get_production_repo(), get_generation_port())
 
 def get_production_status_use_case():
-    return GetProductionStatusUseCase(get_production_repo(), get_generation_port(), get_storage_adapter())
+    return GetProductionStatusUseCase(
+        get_production_repo(), 
+        get_generation_port(), 
+        get_storage_adapter(),
+        FFmpegVideoAssemblyAdapter(FfmpegClient())
+    )

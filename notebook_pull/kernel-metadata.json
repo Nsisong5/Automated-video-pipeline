@@ -1,7 +1,7 @@
 {
-  "id": "wilfredjasper/ltx-video",
-  "id_no": 133282356,
-  "title": "LTX-VIDEO",
+  "id": "nsisongokon/ltx-video",
+  "id_no": 133831034,
+  "title": "ltx-video",
   "code_file": "ltx-video.ipynb",
   "language": "python",
   "kernel_type": "notebook",
@@ -13,7 +13,8 @@
     "gpu"
   ],
   "dataset_sources": [
-    "wilfredjasper/ltx-2-5-deepbeepmeep-int8"
+    "nsisongokon/ltx-job-request",
+    "nsisongokon/ltx-2-5-deepbeepmeep-int8"
   ],
   "kernel_sources": [],
   "competition_sources": [],

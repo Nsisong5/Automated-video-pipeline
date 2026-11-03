@@ -1,10 +1,35 @@
 {
+  "reference_assets": [],
   "jobs": [
     {
-      "prompt": "A deer drinking from the river",
-      "duration": "2 Seconds (49 frames - Fast)",
-      "resolution": "Fast Preview (384p - ~1-2 min)",
-      "seed": -1
+      "prompt": "A slightly zoomed-out, wide shot of a perfectly smooth, matte black board. In the left-center of the dark frame, a crisp, glowing white number '1' magically draws itself. Directly below the '1', a single, solid white circle appears. High contrast, minimalist educational style, flat 2D render. Camera control: Completely static, locked-off wide shot to maintain a perfectly stable canvas.",
+      "duration_seconds": 5,
+      "duration": "5 Seconds (121 frames - Long)",
+      "chain_from_previous": false
+    },
+    {
+      "prompt": "On the same matte black board, a sharp, glowing white plus sign '+' cleanly draws itself to the right of the number '1'. The previous number and white circle remain perfectly preserved, stable, and legible without any distortion. Pure black background. Camera control: Completely static, locked-off wide shot. Do not move the camera, preserving exact spatial memory.",
+      "duration_seconds": 5,
+      "duration": "5 Seconds (121 frames - Long)",
+      "chain_from_previous": true
+    },
+    {
+      "prompt": "To the right of the plus sign, a crisp white number '2' draws itself. Directly below the '2', two solid white circles appear side-by-side. The rest of the equation to the left remains perfectly intact and sharp against the dark background. Minimalist flat design. Camera control: Completely static, locked-off wide shot. Zero camera movement.",
+      "duration_seconds": 5,
+      "duration": "5 Seconds (121 frames - Long)",
+      "chain_from_previous": true
+    },
+    {
+      "prompt": "To the right of the number '2', a glowing white equals sign '=' appears. Immediately next to it, the number '3' smoothly draws itself in crisp white lines. The entire sequence '1 + 2 = 3' is now visible across the center of the black board. Camera control: Completely static, locked-off wide shot to prevent the text from morphing or shifting.",
+      "duration_seconds": 5,
+      "duration": "5 Seconds (121 frames - Long)",
+      "chain_from_previous": true
+    },
+    {
+      "prompt": "Directly below the newly drawn number '3', three solid white circles sequentially pop into existence in a neat horizontal row. The full visual math problem is complete and perfectly legible in bright white against the pure black board. Camera control: A very slow, smooth, minimal dolly-in (zoom in) perfectly centered on the finished equation to emphasize the final answer.",
+      "duration_seconds": 5,
+      "duration": "5 Seconds (121 frames - Long)",
+      "chain_from_previous": true
     }
   ]
 }

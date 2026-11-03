@@ -1,13 +1,17 @@
 import logging
+import dataclasses
 from uuid import UUID, uuid4
 from datetime import datetime
-from typing import Optional
+from typing import Optional, Sequence
 from domain.entities import (
     VideoGenerationRequest, GenerationJob, JobStatus, GenerationResult, GenerationError,
-    Production, Scene, ProductionStatus, SceneStatus, ArtifactReference
+    Production, Scene, ProductionStatus, SceneStatus, ArtifactReference,
+    ReferenceAsset, ReferenceCreationMethod
 )
 from application.ports import (
-    VideoGenerationPort, JobRepositoryPort, ProductionRepositoryPort, ArtifactStoragePort
+    VideoGenerationPort, JobRepositoryPort, ProductionRepositoryPort, 
+    ArtifactStoragePort, FrameExtractionPort, VideoAssemblyPort,
+    ProviderCapabilities
 )
 
 logger = logging.getLogger(__name__)
@@ -108,21 +112,29 @@ class CreateProduction:
     def __init__(self, repo: ProductionRepositoryPort):
         self.repo = repo
 
-    def execute(self, title: str, channel_id: str, requests: list[VideoGenerationRequest]) -> UUID:
+    def execute(self, title: str, channel_id: str, requests: list[VideoGenerationRequest], reference_assets: Sequence[ReferenceAsset] = ()) -> UUID:
+        for asset in reference_assets:
+            if asset.creation.method == ReferenceCreationMethod.UPLOAD:
+                raise ValueError("reference asset upload is not supported yet")
+
         production_id = uuid4()
         scenes = [
             Scene(
                 scene_id=uuid4(),
                 production_id=production_id,
                 sequence_index=i,
-                generation_request=req
+                generation_request=req,
+                chain_from_previous=req.chain_from_previous,
+                input_video_strength=req.input_video_strength,
+                client_job_id=getattr(req, 'client_job_id', None)
             ) for i, req in enumerate(requests)
         ]
         production = Production(
             production_id=production_id,
             title=title,
             channel_id=channel_id,
-            scenes=scenes
+            scenes=scenes,
+            reference_assets=tuple(reference_assets)
         )
         self.repo.save(production)
         logger.info(f"[production_id={production_id}] CreateProduction: Created production '{title}' with {len(scenes)} scenes")
@@ -138,28 +150,50 @@ class StartProduction:
         if not production:
             raise ValueError("Production not found")
             
+        if production.status == ProductionStatus.RUNNING:
+            logger.warning(f"[production_id={production_id}] StartProduction: Already running. Skipping.")
+            return
+
+        has_refs = bool(production.reference_assets) or any(bool(s.generation_request.reference_asset_ids) for s in production.scenes)
+        if has_refs:
+            capabilities = self.gen_port.get_capabilities()
+            if ProviderCapabilities.REFERENCE_ASSETS not in capabilities:
+                raise ValueError("Provider does not support reference assets")
+
+        # Prepare batch
+        requests = []
+        for scene in production.scenes:
+            req = dataclasses.replace(
+                scene.generation_request,
+                chain_from_previous=scene.chain_from_previous,
+                input_video_strength=scene.input_video_strength,
+                client_job_id=scene.client_job_id
+            )
+            requests.append(req)
+
+        # Submit batch
+        external_ref = self.gen_port.submit(requests, reference_assets=production.reference_assets)
+        
+        production.external_ref = str(external_ref)
         production.transition_to(ProductionStatus.RUNNING)
-        
-        # Submit first scene
-        first_scene = production.scenes[0]
-        first_scene.transition_to(SceneStatus.RUNNING)
-        
-        external_ref = self.gen_port.submit(first_scene.generation_request)
-        first_scene.job_ref = str(external_ref)
+        for scene in production.scenes:
+            scene.transition_to(SceneStatus.RUNNING)
         
         self.repo.save(production)
-        logger.info(f"[production_id={production_id}] StartProduction: Started scene 0 (job_ref={external_ref})")
+        logger.info(f"[production_id={production_id}] StartProduction: Started production (batch_ref={external_ref})")
 
 class GetProductionStatus:
     def __init__(
         self, 
         repo: ProductionRepositoryPort, 
         gen_port: VideoGenerationPort, 
-        storage_port: ArtifactStoragePort
+        storage_port: ArtifactStoragePort,
+        assembly_port: VideoAssemblyPort
     ):
         self.repo = repo
         self.gen_port = gen_port
         self.storage_port = storage_port
+        self.assembly_port = assembly_port
 
     def execute(self, production_id: UUID) -> Production:
         production = self.repo.get(production_id)
@@ -169,45 +203,63 @@ class GetProductionStatus:
         if production.status in [ProductionStatus.SUCCEEDED, ProductionStatus.FAILED]:
             return production
             
-        # Find current scene
-        active_scene = next((s for s in production.scenes if s.status == SceneStatus.RUNNING), None)
+        # Poll batch kernel status
+        job_status = self.gen_port.get_status(UUID(production.external_ref))
         
-        if active_scene:
-            # Poll status
-            job_status = self.gen_port.get_status(UUID(active_scene.job_ref))
+        if job_status == JobStatus.SUCCEEDED:
+            logger.info(f"[production_id={production_id}] GetProductionStatus: Batch SUCCEEDED, fetching and assembling artifacts")
+            if production.status != ProductionStatus.ASSEMBLING:
+                production.transition_to(ProductionStatus.ASSEMBLING)
+            self.repo.save(production)
             
-            if job_status == JobStatus.SUCCEEDED:
-                # 1. Fetch result
-                result = self.gen_port.get_result(UUID(active_scene.job_ref))
-                
-                # 2. Store artifact (Module 6 path)
-                artifact = self.storage_port.store(
-                    result.output_artifacts[0].location,
-                    {"production_id": str(production.production_id), "scene_id": str(active_scene.scene_id)}
-                )
-                active_scene.generated_artifact = artifact
-                active_scene.transition_to(SceneStatus.SUCCEEDED)
-                logger.info(f"[production_id={production_id}] GetProductionStatus: Scene {active_scene.sequence_index} succeeded")
-                
-                # 3. Start next scene or finalize
-                next_index = active_scene.sequence_index + 1
-                if next_index < len(production.scenes):
-                    next_scene = production.scenes[next_index]
-                    next_scene.transition_to(SceneStatus.RUNNING)
-                    external_ref = self.gen_port.submit(next_scene.generation_request)
-                    next_scene.job_ref = str(external_ref)
-                    logger.info(f"[production_id={production_id}] GetProductionStatus: Started scene {next_index}")
-                else:
-                    production.transition_to(ProductionStatus.SUCCEEDED)
-                    logger.info(f"[production_id={production_id}] GetProductionStatus: Production SUCCEEDED")
-                
-                self.repo.save(production)
+            # Fetch batch results
+            # The adapter should return a list of ArtifactReferences, one per scene
+            try:
+                batch_result = self.gen_port.get_result(UUID(production.external_ref))
+            except Exception as e:
+                logger.warning(f"[production_id={production_id}] GetProductionStatus: Transient error fetching batch results (will retry on next poll): {e}")
+                return production
+
+            expected_scenes_count = len(production.scenes)
+            available_artifacts = batch_result.output_artifacts if batch_result and batch_result.output_artifacts else []
+
+            # Strict all-scene verification guard: ensure ALL expected scenes are present before storing or assembling
+            if len(available_artifacts) < expected_scenes_count:
+                logger.warning(f"[production_id={production_id}] GetProductionStatus: Downloaded artifacts count ({len(available_artifacts)}) is less than expected scenes ({expected_scenes_count}). Waiting for complete download before assembly.")
+                return production
+
+            # Process and store each scene artifact
+            scene_artifacts = []
+            for i, scene in enumerate(production.scenes):
+                if i < len(available_artifacts):
+                    raw_artifact = available_artifacts[i]
+                    
+                    # Store to hierarchical path
+                    artifact = self.storage_port.store(
+                        raw_artifact.location,
+                        {"production_id": str(production.production_id), "scene_id": str(scene.scene_id)}
+                    )
+                    scene.generated_artifact = artifact
+                    scene.transition_to(SceneStatus.SUCCEEDED)
+                    scene_artifacts.append(artifact)
             
-            elif job_status == JobStatus.FAILED:
-                active_scene.transition_to(SceneStatus.FAILED)
-                production.transition_to(ProductionStatus.FAILED)
-                self.repo.save(production)
-                logger.error(f"[production_id={production_id}] GetProductionStatus: Scene {active_scene.sequence_index} FAILED")
+            # Pre-assembly guard clause
+            if len(scene_artifacts) < expected_scenes_count:
+                logger.warning(f"[production_id={production_id}] GetProductionStatus: Stored scene artifacts count ({len(scene_artifacts)}) does not match expected ({expected_scenes_count}). Retrying on next poll.")
+                return production
+
+            # Assemble episode
+            final_artifact = self.assembly_port.assemble(scene_artifacts)
+            production.final_artifact = final_artifact
+            
+            production.transition_to(ProductionStatus.SUCCEEDED)
+            self.repo.save(production)
+            logger.info(f"[production_id={production_id}] GetProductionStatus: Production SUCCEEDED. Episode: {final_artifact.location}")
+            
+        elif job_status == JobStatus.FAILED:
+            production.transition_to(ProductionStatus.FAILED)
+            self.repo.save(production)
+            logger.error(f"[production_id={production_id}] GetProductionStatus: Batch FAILED")
                 
         return production
 

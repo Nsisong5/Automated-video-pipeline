@@ -1,0 +1,28 @@
+{
+  "reference_assets": [
+    {
+      "asset_id": "cyber_scout_vehicle",
+      "required": true,
+      "creation": {
+        "method": "generate",
+        "prompt": "A heavily modified, matte black futuristic hover-bike with aggressively angular armor plates and glowing crimson neon repulsor engines underneath. High contrast cyberpunk aesthetic, parked on wet asphalt.",
+        "aspect_ratio": "16:9"
+      }
+    }
+  ],
+  "jobs": [
+    {
+      "job_id": "test_scene_01",
+      "prompt": "The matte black futuristic hover-bike idles inches above a rain-slicked neon street.",
+      "duration_seconds": 5,
+      "duration": "5 Seconds (121 frames - Long)",
+      "chain_from_previous": false,
+      "reference_asset_ids": [
+        "cyber_scout_vehicle"
+      ],
+      "aspect_ratio": "16:9 Landscape",
+      "resolution": "Fast Preview (384p - ~1-2 min)",
+      "seed": 42
+    }
+  ]
+}

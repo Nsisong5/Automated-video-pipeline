@@ -28,11 +28,12 @@ class TestKaggleComputeAdapter(unittest.TestCase):
         self.assertEqual(self.adapter.get_status(job_id), ComputeJobStatus.FAILED)
 
 
+    @patch("infrastructure.compute.kaggle.adapter.notebook_control")
     @patch("infrastructure.compute.kaggle.adapter.logger")
     @patch("shutil.rmtree")
     @patch("infrastructure.compute.kaggle.adapter.os.path.exists")
     @patch("infrastructure.compute.kaggle.adapter.os.walk")
-    def test_get_result_logs_error_when_no_artifact_found(self, mock_walk, mock_exists, mock_rmtree, mock_logger):
+    def test_get_result_logs_error_when_no_artifact_found(self, mock_walk, mock_exists, mock_rmtree, mock_logger, mock_notebook):
 
         job_id = uuid4()
         self.adapter.in_flight_jobs[job_id] = "user1"
@@ -40,7 +41,8 @@ class TestKaggleComputeAdapter(unittest.TestCase):
         mock_exists.return_value = True
         mock_walk.return_value = [("dir", [], ["file.txt"])] # No mp4/mov
         
-        self.adapter.get_result(job_id)
+        with self.assertRaises(RuntimeError):
+            self.adapter.get_result(job_id)
         
         # Verify error was logged
         self.assertTrue(any(f"[job_id={job_id}] KaggleComputeAdapter: No valid artifacts found" in call.args[0] for call in mock_logger.error.call_args_list))
